@@ -1,0 +1,71 @@
+﻿* {
+
+}
+
+body { /* Whole page */
+    background-color: grey;
+}
+
+nav { /* Basically the Canvas */
+    width: 512px;
+    height: 512px;
+    background-color: black;
+}
+
+ul {
+
+}
+
+p { /* Paragraphs withint  */
+    color: lightgreen;
+    line-height: 40px;
+    font-size: 20px;
+    margin: 0;
+    padding: 100px;
+}
+
+p1 { /* Title */
+    font-size: 80px;
+    color: gold;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+p2 { /* Names */
+    font-size: 15px;
+    color: gold;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+p3 {
+    font-size: 30px;
+    display: inline-block;
+    float: left;
+    width: 100%;
+    font-family: arial;
+}
+
+ul li { /* Unordered list, list item */
+    list-style: none;
+    display: inline-block;
+    float: left;
+    width: 412px;
+    padding: 10px;
+    line-height: 110px; 
+    text-align: center;
+}
+
+ul li a { /* Links specifically */
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: arial;
+    color: white;
+}
+
+ul li a:hover {
+    color: red;
+}

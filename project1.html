@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+            <title>Galaga</title>
+            <script type="text/javascript" src="Common/webgl-utils.js"></script>
+            <script type="text/javascript" src="Common/initShaders.js"></script>
+            <script type="text/javascript" src="Common/MV.js"></script>
+            <script type="text/javascript" src="project1final.js"></script>
+            <link rel="stylesheet" href="style.css">
+            <script type="x-shader/x-vertex" id="vertex-shader">
+                attribute vec4 myPosition;
+                uniform float theta;
+                uniform float tx;
+                uniform float ty;
+                
+                
+                void main() {
+                    float xf;
+                    float yf;
+                    float xi;
+                    float yi;
+                    
+                    xi = myPosition.x;
+                    yi = myPosition.y;
+                    
+                    vec3 vi;
+                    vec3 vf;
+                   
+                    vi[0] = xi;
+                    vi[1] = yi;
+                    vi[2] = 1.0;
+                
+                    mat3 Mt = mat3(1,
+                                   0,
+                                   0,
+                                   0,
+                                   1,
+                                   0,
+                                   tx,
+                                   ty,
+                                   1);
+                                   
+                    vf = Mt * vi;    
+                    
+                    gl_Position.x = vf[0] ;
+                    gl_Position.y = vf[1] ;
+                    gl_Position.z = 0.0;
+                    gl_Position.w = vf[2];
+                                       
+                    
+                  
+                }
+                </script>
+               
+            <script type="x-shader/x-fragment" id="fragment-shader">
+                precision mediump float;
+                uniform vec4 shapeColor;
+                void main() {
+                    gl_FragColor = shapeColor;
+                }
+            </script>
+    </head>
+    
+    <body onload="init()" onkeydown = "keys(event)">
+        <canvas width="512" height="512" id="gl-canvas">
+        </canvas>
+        <p3 id="LIFE">LifeTotal: 15</p3>
+        <p3 id="SCORE">Score: 0</p3>
+    </body>
+</html>
+
