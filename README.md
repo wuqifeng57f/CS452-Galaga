@@ -1,7 +1,4 @@
-John Magnuson & Qifeng Wu
-CS452: Computer Graphics, Project 1
-
-Due Date: 3/7/2019
+# CS452: Computer Graphics, Project 1
 
 Galaga
 
